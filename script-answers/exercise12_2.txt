@@ -1,0 +1,10 @@
+Script started on Fri Dec 16 17:25:08 2022
+bash-3.2$ docker container run -it ubuntu bash
+[?2004h]0;root@da6819d5cfa9: /root@da6819d5cfa9:/# mkdir /usr/src/app
+[?2004l[?2004h]0;root@da6819d5cfa9: /root@da6819d5cfa9:/# touch /sr  usr/src/app/index.js
+[?2004l[?2004h]0;root@da6819d5cfa9: /root@da6819d5cfa9:/# [Kexit
+[?2004lexit
+bash-3.2$ exit
+exit
+
+Script done on Fri Dec 16 17:25:51 2022
