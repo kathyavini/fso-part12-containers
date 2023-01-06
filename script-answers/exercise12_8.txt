@@ -1,0 +1,106 @@
+Script started on Fri Jan  6 14:38:11 2023
+bash-3.2$ docker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+b64434f26b78   mongo     "docker-entrypoint.s…"   51 minutes ago   Up 51 minutes   0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend_mongo_1
+bash-3.2$ docker exec -ot[D[K[D[Kit mon[D[K[D[K[D[Ktodo-backend_mongo_1 bash
+root@b64434f26b78:/# [Kroot@b64434f26b78:/# mongosh u -roo      -u root -p example
+]0;mongosh mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	63b8a316579ff7e99c9dba51
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.1[0m
+Using MongoDB:		6.0.3
+[1m[33mUsing Mongosh[0m:		1.6.1
+
+For mongosh info see: [1mhttps://docs.mongodb.com/mongodb-shell/[0m
+
+[1G[0J [1G[1m[33m------[0m
+   [1m[33mThe server generated these startup warnings when booting[0m
+   2023-01-06T21:47:14.703+00:00: vm.max_map_count is too low
+[1m[33m------[0m
+
+[1m[33m------[0m
+   Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+   metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+   
+   The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+   and anyone you share the URL with. MongoDB may use this information to make product
+   improvements and to suggest MongoDB products and deployment options to you.
+   
+   To enable free monitoring, run the following command: db.enableFreeMonitoring()
+   To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+[1m[33m------[0m
+
+[1G[0Jtest> [7Gshow dbs
+[1madmin[0m         100.00 KiB
+[1mconfig[0m        108.00 KiB
+[1mlocal[0m          72.00 KiB
+[1mthe_database[0m   72.00 KiB
+[1G[0Jtest> [7Guse the_database
+switched to db the_database
+[1G[0Jthe_database> [15Gshow collections
+[1mtodos[0m
+[1G[0Jthe_database> [15Gdb.todos.find({})
+[
+  {
+    _id: ObjectId("639f746b5674e5641492a17c"),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("639f746b5674e5641492a17d"),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId("639f74debe7c3665daa5aa0c"),
+    text: [32m'Test text JSON with bind mount!'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("63b8990174a6dd5304389b09"),
+    text: [32m'Use raw JSON and a key value pair for text to create a new todo'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  }
+]
+[1G[0Jthe_database> [15Gdb.todos.[1G[0Jthe_database> db.todos[23G[1G[0Jthe_database> db.todo[22G[1G[0Jthe_database> db.tod[21G[1G[0Jthe_database> db.to[20G[1G[0Jthe_database> db.t[19G[1G[0Jthe_database> db.[18G[1G[0Jthe_database> db[17G[1G[0Jthe_database> d[16G[1G[0Jthe_database> [15Gdb.todos.insertOne({text[33mtext[39m: [32m"[39m[32mI[39m[32mn[39m[32mc[39m[32mr[39m[32me[39m[32ma[39m[32ms[39m[32me[39m [32mt[39m[32mh[39m[32me[39m [32mn[39m[32mu[39m[32mm[39m[32mb[39m[32me[39m[32mr[39m [32mo[39m[32mf[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32ms[39m [32mi[39m[32mn[39m [32mm[39m[32my[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32mb[39m[32me[39m[32ml[39m[32mt[39m[32m"[39m, d[36mdo[39mdone[33mdone[39m: fals[33mfalse[39m})
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId("63b8a34df9a75c263c26844f")
+}
+[1G[0Jthe_database> [15Gdb.tdo[1G[0Jthe_database> db.td[20G[1G[0Jthe_database> db.t[19Godos.find)[1G[0Jthe_database> db.todos.find[28G({})
+[
+  {
+    _id: ObjectId("639f746b5674e5641492a17c"),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("639f746b5674e5641492a17d"),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId("639f74debe7c3665daa5aa0c"),
+    text: [32m'Test text JSON with bind mount!'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("63b8990174a6dd5304389b09"),
+    text: [32m'Use raw JSON and a key value pair for text to create a new todo'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("63b8a34df9a75c263c26844f"),
+    text: [32m'Increase the number of tools in my toolbelt'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15Gexit
+root@b64434f26b78:/# exit
+exit
+bash-3.2$ exit
+exit
+
+Script done on Fri Jan  6 14:40:38 2023
