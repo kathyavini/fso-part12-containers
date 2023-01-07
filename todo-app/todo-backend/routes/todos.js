@@ -4,7 +4,6 @@ const router = express.Router();
 
 /* Exercise 12.10 */
 const redis = require('../redis');
-let todoCount = 0;
 
 /* GET todos listing. */
 router.get('/', async (_, res) => {
@@ -20,6 +19,7 @@ router.post('/', async (req, res) => {
   });
 
   /* Exercise 12.10 */
+  let todoCount = (await redis.getAsync('added_todos')) || 0;
   todoCount++;
   await redis.setAsync('added_todos', todoCount);
 
