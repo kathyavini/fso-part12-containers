@@ -53,7 +53,7 @@ singleRouter.put('/', async (req, res) => {
     req.todo._id,
     {
       text: req.body.text,
-      done: false,
+      done: req.body.done,
     },
     { new: true }
   );
